@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    android:foreground="?attr/selectableItemBackground"
+    app:cardBackgroundColor="@color/card_background"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="2dp"
+    app:strokeColor="@color/gray_light"
+    app:strokeWidth="1dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <!-- Category Icon -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/categoryIcon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            app:cardBackgroundColor="@color/gray_light"
+            app:cardCornerRadius="12dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/categoryIconImage"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_category_other"
+                android:tint="@color/purple_500" />
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- Expense Details -->
+        <TextView
+            android:id="@+id/expenseNameText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Expense Name"
+            android:textColor="@color/text_primary"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/expenseAmountText"
+            app:layout_constraintStart_toEndOf="@id/categoryIcon"
+            app:layout_constraintTop_toTopOf="@id/categoryIcon" />
+
+        <TextView
+            android:id="@+id/expenseCategoryText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Category"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/categoryIcon"
+            app:layout_constraintEnd_toStartOf="@id/expenseAmountText"
+            app:layout_constraintStart_toEndOf="@id/categoryIcon" />
+
+        <!-- Amount -->
+        <TextView
+            android:id="@+id/expenseAmountText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="₹0.00"
+            android:textColor="@color/red"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/categoryIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/categoryIcon" />
+
+        <!-- Date -->
+        <TextView
+            android:id="@+id/expenseDateText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Date"
+            android:textColor="@color/text_secondary"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/expenseAmountText" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
