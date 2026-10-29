@@ -105,8 +105,8 @@ class AddExpenseDialogFragment : DialogFragment() {
     }
 
     private fun updateSaveButtonState() {
-        val dialog = dialog as? AlertDialog
-        val positiveButton = dialog?.getButton(AlertDialog.BUTTON_POSITIVE)
+        val alertDialog = dialog as? AlertDialog
+        val positiveButton = alertDialog?.getButton(AlertDialog.BUTTON_POSITIVE)
         val name = binding.expenseName.text.toString().trim()
         val amount = binding.expenseAmount.text.toString().trim()
         positiveButton?.isEnabled = name.isNotEmpty() && amount.isNotEmpty() && amount.toDoubleOrNull() != null

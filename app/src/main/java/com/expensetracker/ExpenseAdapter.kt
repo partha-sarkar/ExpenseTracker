@@ -1,5 +1,6 @@
 package com.expensetracker
 
+import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -51,7 +52,7 @@ class ExpenseAdapter(
                 binding.root.context.getColor(categoryColor)
             )
             binding.categoryIcon.setCardBackgroundColor(
-                binding.root.context.getColor(categoryColor).copyAlpha(30)
+                Color.argb(30, Color.red(binding.root.context.getColor(categoryColor)), Color.green(binding.root.context.getColor(categoryColor)), Color.blue(binding.root.context.getColor(categoryColor)))
             )
 
             binding.root.setOnClickListener { onItemClick(expense) }
