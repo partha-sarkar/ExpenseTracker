@@ -17,7 +17,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set up JDK 17
-        uses: actions/setup-java@v4
+        uses: actions/setup-java@v5
         with:
           java-version: '17'
           distribution: 'temurin'
@@ -26,10 +26,11 @@ jobs:
       - name: Setup Android SDK
         uses: android-actions/setup-android@v3
         with:
-          api-level: 34
-          ndk-version: r26c
-          build-tools-version: 34.0.0
-          emulator: false
+          packages: |
+            platforms;android-34
+            build-tools;34.0.0
+            platform-tools
+          accept-android-sdk-licenses: true
 
       - name: Cache Gradle packages
         uses: actions/cache@v4
